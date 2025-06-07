@@ -1,0 +1,16 @@
+# memvid-evaluator/requirements.txt
+
+streamlit
+memvid # From PyPI
+Pillow
+numpy
+opencv-python
+tqdm
+# For preprocessor.py
+pypdf2 # For PDF processing
+python-docx # For DOCX processing
+python-magic-bin # For identifying file types
+# For data analysis (optional for now, can add later if using directly in backend)
+pandas
+matplotlib
+seaborn
