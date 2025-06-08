@@ -36,6 +36,7 @@ Key Initial Observations (using primarily mp4v codec, more tests ongoing):
 
 **Storage:** MemVid's video/index storage for text is significantly larger (e.g., 18x-80x+) than original uncompressed text and substantially more so compared to gzipped text. The choice of tested video codec (mp4v, h265, h264) had a surprisingly minor impact on total storage size for successfully processed files.
 Text Transformation: Input text processed by MemvidEncoder.add_text() (default chunking: 1024 char size, 32 char overlap) is transformed. The retrieved text (concatenation of chunks from MemvidRetriever) matches this internal "canonical" representation but differs in length and content from the original input string.
+![Description of Storage Ratios Chart](assets/mp4_Comparison of Actual Storage Sizes.jpg)
 
 **Speed:** Encoding (~4s to 8+ minutes for <100KB to 1.5MB text) and decoding (~2s to 2+ minutes) times are non-trivial and scale with data size. Some specific encoder configurations (e.g., h265 without Docker for one large file) showed extreme processing times.
 
