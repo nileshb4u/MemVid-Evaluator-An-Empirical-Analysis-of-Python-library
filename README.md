@@ -45,6 +45,9 @@ Text Transformation: Input text processed by MemvidEncoder.add_text() (default c
 
 ![test chart](assets/mp4_Processing-Times-vs.-Original-Text-Size.jpg)
 
+![test chart](assets/mp4_Storage-Size-Ratios-MemVid-vs.-Original-vs-Gzipped.jpg)
+
+
 **Comparison charts for Encoder Codec: h264**
 
 ![test chart](assets/h264_Comparison-of-Actual-Storage-Sizes.jpg)
