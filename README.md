@@ -29,6 +29,22 @@ The MemVid library itself (v0.2.x) is a comprehensive AI memory system, but this
 - Does retrieved text match the input exactly?
 - How do codecs or Docker settings influence performance?
 
+## 📊 Project Summary & Preliminary Findings
+
+This project, MemVid Evaluator, provides tools to empirically benchmark the MemVid library (v0.2.x) for its core text-to-video encoding and retrieval performance. We focus on storage efficiency, processing speed, and data transformation characteristics.
+Key Initial Observations (using primarily mp4v codec, more tests ongoing):
+
+**Storage:** MemVid's video/index storage for text is significantly larger (e.g., 18x-80x+) than original uncompressed text and substantially more so compared to gzipped text. The choice of tested video codec (mp4v, h265, h264) had a surprisingly minor impact on total storage size for successfully processed files.
+Text Transformation: Input text processed by MemvidEncoder.add_text() (default chunking: 1024 char size, 32 char overlap) is transformed. The retrieved text (concatenation of chunks from MemvidRetriever) matches this internal "canonical" representation but differs in length and content from the original input string.
+
+**Speed:** Encoding (~4s to 8+ minutes for <100KB to 1.5MB text) and decoding (~2s to 2+ minutes) times are non-trivial and scale with data size. Some specific encoder configurations (e.g., h265 without Docker for one large file) showed extreme processing times.
+
+**Failures:** Some PDF/DOCX files consistently failed during encoding (index file not created).
+
+**Conclusion (Preliminary):** While MemVid offers a novel approach, its current text encoding component shows considerable storage overhead and transforms input text. Its utility is likely best understood within its broader intended role as an AI memory system with RAG capabilities, rather than as a general-purpose, space-efficient, or perfectly fiducial text storage method.
+This evaluator (run_all_experiments.py and the Streamlit app.py) allows users to replicate these tests and explore MemVid's performance with their own data and configurations.
+
+
 ## 🛠️ Setup and Installation
 
 ### Prerequisites
