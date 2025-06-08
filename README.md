@@ -39,12 +39,19 @@ Text Transformation: Input text processed by MemvidEncoder.add_text() (default c
 
 **Example Chart**
 assets/h264_Comparison of Actual Storage Sizes.jpg
+
 assets/h265_Comparison of Actual Storage Sizes.jpg
+
 assets/mp4_Comparison of Actual Storage Sizes.jpg
+
 assets/h264_Processing Times vs. Original Text Size.jpg
+
 assets/h265_Processing Times vs. Original Text Size.jpg
+
 assets/mp4_Processing Times vs. Original Text Size.jpg
+
 assets/h264_Storage Size Ratios -MemVid vs. Original vs Gzipped.jpg
+
 assets/h265_Storage Size Ratios -MemVid vs. Original vs Gzipped.jpg
 
 **Speed:** Encoding (~4s to 8+ minutes for <100KB to 1.5MB text) and decoding (~2s to 2+ minutes) times are non-trivial and scale with data size. Some specific encoder configurations (e.g., h265 without Docker for one large file) showed extreme processing times.
